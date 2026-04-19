@@ -61,19 +61,34 @@ flutter run --release -d <device-id>
 
 ### Build APK (release)
 
+Use this default command to build a universal APK that supports both 32-bit and 64-bit Android devices:
+
 ```bash
-flutter build apk --release
+flutter build apk --release --target-platform android-arm,android-arm64
 ```
 
 Output:
 
 - build/app/outputs/flutter-apk/app-release.apk
 
+Optional (smaller per-architecture APKs):
+
+```bash
+flutter build apk --release --split-per-abi
+```
+
+Split outputs (example):
+
+- build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
+- build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+
 ## Production Notes
 
 - Debug banner is disabled in MaterialApp (`debugShowCheckedModeBanner: false`)
 - Release install was validated on device (`flutter run --release`)
 - For real world testing, device can be unplugged after install
+- If a device shows "App not installed as app isn't compatible", verify APK ABI support.
+	Building with `android-arm,android-arm64` fixes most 32-bit/64-bit compatibility issues.
 
 ## App Icon Workflow
 
