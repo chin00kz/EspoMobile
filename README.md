@@ -4,7 +4,7 @@ ESM Mobile is a Flutter app that loads the FedEx ESM website inside a native mob
 
 ## What This App Is
 
-- A lightweight mobile wrapper around: https://www.fedex.esm.lk/
+- A lightweight mobile wrapper around: https://www.espocrm.com/
 - Built for Android first (currently validated on a real Android device)
 - Includes native pull-to-refresh and web back navigation handling
 
